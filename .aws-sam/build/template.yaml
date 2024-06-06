@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  ApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: fast_api_project.handler
+      Runtime: python3.12
+      CodeUri: ApiFunction
+      Layers:
+      - Ref: BaseLayer
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+    Metadata:
+      SamResourceId: ApiFunction
+  BaseLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: BaseLayer
+      Description: Common dependencies
+      ContentUri: ..\..\layer
+      CompatibleRuntimes:
+      - python3.12
