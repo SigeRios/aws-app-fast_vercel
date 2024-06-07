@@ -21,7 +21,7 @@ const Form : React.FC<FormProps> =(props)=>{
 
     return <>
             <p>
-            Hi there! I'd be happy to generate a snippet and keywords for your brand. Just let me know the name of your business or product, and I'll create helpful content for your marketing needs. What's the brand you'd like me to work with?
+            Hi there! I d be happy to generate a snippet and keywords for your brand. Just let me know the name of your business or product, and I ll create helpful content for your marketing needs. What s the brand you d like me to work with?
         </p>
         <input
         type="text" 
