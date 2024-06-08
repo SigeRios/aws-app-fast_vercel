@@ -11,7 +11,7 @@ const SigeRios : React.FC = () => {
                 try {
                     const response = await fetch(url, options);
                     if (!response.ok) {
-                        throw new Error('Network response was not ok');
+                        throw new Error("Network response was not ok");
                     }
                     return response.json();
                 } catch (error) {
@@ -32,7 +32,7 @@ const SigeRios : React.FC = () => {
                 const data: any = await fetchWithRetry(`${ENDPOINT}?prompt=${encodeURIComponent(prompt)}`);
                 onResult(data);
             } catch (error) {
-                console.error('There was a problem with the fetch operation:', error);
+                console.error("There was a problem with the fetch operation:", error);
             }
         };
         
